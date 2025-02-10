@@ -43,24 +43,20 @@
 | 12   | Exibição do Ranking Geral | Existem no mínimo 10 jogadores cadastrados com pontuação. | O usuário acessa a tela "Ranking Geral". | O sistema exibe os jogadores ordenados por pontuação. | O ranking é exibido corretamente e atualizado sempre que necessário. |
 
 # Requisitos não funcionais 
-# Requisitos Não Funcionais
-
 | RNFXX | Título | Descrição | Aspecto de Qualidade (ISO 25010) |
 |-------|--------|-----------|----------------------------------|
-| RNF01 | Formato de Dados do Cadastro de Usuário | O sistema deve permitir o cadastro de usuários com os seguintes formatos: username limitado a 10 caracteres, senha com mínimo de 8 e máximo de 20 caracteres, data de nascimento no formato DD/MM/AAAA e uma frase de efeito opcional com limite de 25 caracteres. | usabilidade |
-| RNF02 | Persistência de Dados no Banco de Dados | O sistema deve utilizar um banco de dados com criptografia AES-256 para armazenar todas as informações dos jogadores. | segurança |
-| RNF03 | Aleatoriedade no Pareamento de Jogadores | O sistema deve garantir que o pareamento de jogadores ocorra com chances iguais de 50%, sem qualquer viés ou padrão previsível. | desempenho |
-| RNF04 | Restrições na Inserção da Palavra pelo Detentor | A palavra inserida pelo detentor deve corresponder exatamente a uma palavra válida no dicionário controlado pelo time de desenvolvimento. | funcionalidade |
-| RNF05 | Bloqueio Imediato de Letras Repetidas | O sistema deve desabilitar letras já escolhidas pelo prisioneiro em até 100 milissegundos, evitando tentativas repetidas. | usabilidade |
-| RNF06 | Fórmula para Cálculo do Limite de Tentativas | O sistema deve calcular o limite de tentativas do prisioneiro usando a fórmula: número de letras da palavra + 5. Por exemplo, uma palavra com 7 letras permite 12 tentativas. | funcionalidade |
-| RNF07 | Encerramento Automático da Partida | O sistema deve encerrar automaticamente a partida e desconectar os jogadores em até 500 milissegundos após a vitória de um dos jogadores. | confiabilidade |
-| RNF08 | Atualização de Pontuação | O sistema deve atualizar a pontuação do jogador vencedor no ranking geral em até 300 milissegundos após o encerramento da partida. | desempenho |
-| RNF09 | Emissão de Sons | O sistema deve reproduzir sons que indiquem claramente o propósito de cada evento, como acertos, erros e encerramento da partida. Os sons devem seguir convenções intuitivas e ser livres de direitos autorais. Exemplos: som de "erro" para tentativas incorretas, som de "acerto" para letras corretas, som de "vitória" para o jogador vencedor e som de "derrota" para o perdedor. Cada som deve durar exatamente 1 segundo. | usabilidade |
-| RNF10 | Exibição de Animações | O sistema deve exibir animações que representem eventos do jogo, como escolha de letras, erros do prisioneiro e enforcamento. Cada animação deve durar exatamente 2,5 segundos. | usabilidade |
-| RNF11 | Tempo de Resposta do Sistema | O sistema deve responder a todas as interações do usuário (como cliques, seleção de letras, atualização do ranking e login) em até 500 milissegundos. | desempenho |
-| RNF12 | Usabilidade do Site | O site do jogo deve seguir as heurísticas de usabilidade de Nielsen, garantindo que a interface seja intuitiva, eficiente e acessível para os usuários. | usabilidade |
-| RNF13 | Disponibilização do Jogo | O sistema deve ser disponibilizado exclusivamente como uma aplicação web, acessível por meio de navegadores modernos em dispositivos com conexão à internet. | compatibilidade |
-| RNF14 | Disponibilidade do Sistema | O sistema deve estar disponível para uso 24 horas por dia, 7 dias por semana, com uma taxa de disponibilidade mínima de 99,9%. | confiabilidade |
-| RNF15 | Escalabilidade do Sistema | O sistema deve ser capaz de suportar até 1000 usuários simultâneos sem degradação significativa no desempenho ou na experiência do usuário. | desempenho |
-
-
+| RNF01 | Formato de Dados do Cadastro de Usuário | O sistema deve permitir o cadastro de usuários com os seguintes formatos: username limitado a 10 caracteres, senha com mínimo de 8 e máximo de 20 caracteres, data de nascimento no formato DD/MM/AAAA e uma frase de efeito opcional com limite de 25 caracteres. | Usabilidade |
+| RNF02 | Persistência de Dados no Banco de Dados | O sistema deve utilizar um banco de dados com criptografia AES-256 para armazenar todas as informações dos jogadores. | Segurança |
+| RNF03 | Aleatoriedade no Pareamento de Jogadores | O sistema deve garantir que o pareamento de jogadores ocorra com chances iguais de 50%, sem qualquer viés ou padrão previsível. | Desempenho |
+| RNF04 | Restrições na Inserção da Palavra pelo Detentor | A palavra inserida pelo detentor deve corresponder exatamente a uma palavra válida no dicionário controlado pelo time de desenvolvimento. | Funcionalidade |
+| RNF05 | Bloqueio Imediato de Letras Repetidas | O sistema deve desabilitar letras já escolhidas pelo prisioneiro em até 100 milissegundos, evitando tentativas repetidas. | Usabilidade |
+| RNF06 | Fórmula para Cálculo do Limite de Tentativas | O sistema deve calcular o limite de tentativas do prisioneiro usando a fórmula: número de letras da palavra + 5. Por exemplo, uma palavra com 7 letras permite 12 tentativas. | Funcionalidade |
+| RNF07 | Encerramento Automático da Partida | O sistema deve encerrar automaticamente a partida e desconectar os jogadores em até 500 milissegundos após a vitória de um dos jogadores. | Confiabilidade |
+| RNF08 | Atualização de Pontuação | O sistema deve atualizar a pontuação do jogador vencedor no ranking geral em até 300 milissegundos após o encerramento da partida. | Desempenho |
+| RNF09 | Emissão de Sons | O sistema deve reproduzir sons que indiquem claramente o propósito de cada evento, como acertos, erros e encerramento da partida. Os sons devem seguir convenções intuitivas e ser livres de direitos autorais. Exemplos: som de "erro" para tentativas incorretas, som de "acerto" para letras corretas, som de "vitória" para o jogador vencedor e som de "derrota" para o perdedor. Cada som deve durar exatamente 1 segundo. | Usabilidade |
+| RNF10 | Exibição de Animações | O sistema deve exibir animações que representem eventos do jogo, como escolha de letras, erros do prisioneiro e enforcamento. Cada animação deve durar exatamente 2,5 segundos. | Usabilidade |
+| RNF11 | Tempo de Resposta do Sistema | O sistema deve responder a todas as interações do usuário (como cliques, seleção de letras, atualização do ranking e login) em até 500 milissegundos. | Desempenho |
+| RNF12 | Usabilidade do Site | O site do jogo deve seguir as heurísticas de usabilidade de Nielsen, garantindo que a interface seja intuitiva, eficiente e acessível para os usuários. | Usabilidade |
+| RNF13 | Disponibilização do Jogo | O sistema deve ser disponibilizado exclusivamente como uma aplicação web, acessível por meio de navegadores modernos em dispositivos com conexão à internet. | Compatibilidade |
+| RNF14 | Disponibilidade do Sistema | O sistema deve estar disponível para uso 24 horas por dia, 7 dias por semana, com uma taxa de disponibilidade mínima de 99,9%. | Confiabilidade |
+| RNF15 | Escalabilidade do Sistema | O sistema deve ser capaz de suportar até 1000 usuários simultâneos sem degradação significativa no desempenho ou na experiência do usuário. | Desempenho |
