@@ -1,4 +1,8 @@
-# Requisitos Funcionais
+Este repositório apresenta um conjunto de requisitos funcionais e não funcionais para o desenvolvimento de um jogo de forca online, onde dois jogadores interagem: um escolhe uma palavra (detentor) e o outro tenta adivinhá-la (prisioneiro). Para definir os requisitos, realizamos uma pesquisa exploratória em diversos sites de jogos de forca online existentes. Inspirados por essas referências, projetamos um jogo fictício que incorpora as melhores práticas observadas.
+
+## Requisitos Funcionais
+Os requisitos funcionais descrevem as funcionalidades específicas do sistema. Eles incluem ações como cadastro de usuários, login, pareamento de jogadores, validação de palavras e lógica do jogo. Cada requisito funcional está diretamente ligado a uma tarefa ou comportamento esperado do sistema.
+
 | RFXX  | Título                                     | Regra de Negócio |
 |-------|--------------------------------------------|------------------|
 | RF01  | Cadastro de Usuário                        | O sistema deve permitir que novos usuários realizem o cadastro, inserindo suas informações pessoais na tela "Entrar". Esses dados serão utilizados para exibição no ranking geral e para identificação pelos adversários. |
@@ -18,7 +22,32 @@
 | RF15  | Tratamento de Inatividade  | O sistema deve monitorar a atividade dos jogadores durante a partida. Caso um jogador fique inativo por um determinado período, o sistema deve disparar um aviso visual para alertá-lo. Se o jogador permanecer inativo após o aviso, o sistema deve encerrar automaticamente a partida e declarar o adversário como vencedor. || RNFXX | Título                     | Descrição                         
 | RNF16 | Tempo de Monitoramento de Inatividade | O sistema deve monitorar a inatividade dos jogadores e emitir um aviso após 30 segundos de inatividade. Se o jogador não realizar nenhuma interação dentro de 10 segundos após o aviso, o jogo será encerrado automaticamente. O aviso deve incluir uma mensagem visual clara. | Usabilidade                      |                                  |
 
-# Casos de testes - Requsitos funcionais
+### Requisitos não funcionais 
+Os requisitos não funcionais definem critérios de qualidade e restrições do sistema, como por exemplo segurança, desempenho e usabilidade, seguindo a ISO/IEC 25010.
+
+| RNFXX | Título | Descrição | Aspecto de Qualidade (ISO 25010) |
+|-------|--------|-----------|----------------------------------|
+| RNF01 | Formato de Dados do Cadastro de Usuário | O sistema deve permitir o cadastro de usuários com os seguintes formatos: username limitado a 10 caracteres, senha com mínimo de 8 e máximo de 20 caracteres, data de nascimento no formato DD/MM/AAAA e uma frase de efeito opcional com limite de 25 caracteres. | Usabilidade |
+| RNF02 | Persistência de Dados no Banco de Dados | O sistema deve utilizar um banco de dados com criptografia AES-256 para armazenar todas as informações dos jogadores. | Segurança |
+| RNF03 | Aleatoriedade no Pareamento de Jogadores | O sistema deve garantir que o pareamento de jogadores ocorra com chances iguais de 50%, sem qualquer viés ou padrão previsível. | Desempenho |
+| RNF04 | Restrições na Inserção da Palavra pelo Detentor | A palavra inserida pelo detentor deve corresponder exatamente a uma palavra válida no dicionário controlado pelo time de desenvolvimento. | Funcionalidade |
+| RNF05 | Bloqueio Imediato de Letras Repetidas | O sistema deve desabilitar letras já escolhidas pelo prisioneiro em até 100 milissegundos, evitando tentativas repetidas. | Usabilidade |
+| RNF06 | Fórmula para Cálculo do Limite de Tentativas | O sistema deve calcular o limite de tentativas do prisioneiro usando a fórmula: número de letras da palavra + 5. Por exemplo, uma palavra com 7 letras permite 12 tentativas. | Funcionalidade |
+| RNF07 | Encerramento Automático da Partida | O sistema deve encerrar automaticamente a partida e desconectar os jogadores em até 500 milissegundos após a vitória de um dos jogadores. | Confiabilidade |
+| RNF08 | Atualização de Pontuação | O sistema deve atualizar a pontuação do jogador vencedor no ranking geral em até 300 milissegundos após o encerramento da partida. | Desempenho |
+| RNF09 | Emissão de Sons | O sistema deve reproduzir sons que indiquem claramente o propósito de cada evento, como acertos, erros e encerramento da partida. Os sons devem seguir convenções intuitivas e ser livres de direitos autorais. Exemplos: som de "erro" para tentativas incorretas, som de "acerto" para letras corretas, som de "vitória" para o jogador vencedor e som de "derrota" para o perdedor. Cada som deve durar exatamente 1 segundo. | Usabilidade |
+| RNF10 | Exibição de Animações | O sistema deve exibir animações que representem eventos do jogo, como escolha de letras, erros do prisioneiro e enforcamento. Cada animação deve durar exatamente 2,5 segundos. | Usabilidade |
+| RNF11 | Tempo de Resposta do Sistema | O sistema deve responder a todas as interações do usuário (como cliques, seleção de letras, atualização do ranking e login) em até 500 milissegundos. | Desempenho |
+| RNF12 | Usabilidade do Site | O site do jogo deve seguir as heurísticas de usabilidade de Nielsen, garantindo que a interface seja intuitiva, eficiente e acessível para os usuários. | Usabilidade |
+| RNF13 | Disponibilização do Jogo | O sistema deve ser disponibilizado exclusivamente como uma aplicação web, acessível por meio de navegadores modernos em dispositivos com conexão à internet. | Compatibilidade |
+| RNF14 | Disponibilidade do Sistema | O sistema deve estar disponível para uso 24 horas por dia, 7 dias por semana, com uma taxa de disponibilidade mínima de 99,9%. | Confiabilidade |
+| RNF15 | Escalabilidade do Sistema | O sistema deve ser capaz de suportar até 1000 usuários simultâneos sem degradação significativa no desempenho ou na experiência do usuário. | Desempenho |
+| RNF16 | Tempo de Monitoramento de Inatividade | O sistema deve monitorar a inatividade dos jogadores e emitir um aviso após 30 segundos de inatividade. Se o jogador não realizar nenhuma interação dentro de 10 segundos após o aviso, o jogo será encerrado automaticamente. O aviso deve incluir uma mensagem visual clara. | Usabilidade                      |
+
+## Casos de testes
+Os casos de teste foram elaborados para validar se os requisitos funcionais e não funcionais estão sendo implementados corretamente. Eles podem ser seguidos como guias para verificar o comportamento do sistema em diferentes cenários, desde o cadastro de usuários até a lógica do jogo e a emissão de sons e animações. Esses testes ajudam a identificar falhas antes da implementação final, garantindo a qualidade do software.
+
+## Casos de testes - Requsitos funcionais
 | ##   | Título do Caso de Teste                     | Pré-condição                                      | Procedimento de Teste | Resultado Esperado  | Pós-condição                                  |
 |---- |---------------------------------------------|--------------------------------------------------|----------------------|--------------------------------------------|----------------------------------------------|
 | 01  | Cadastro de Usuário                         | O usuário não está cadastrado no sistema.       | O usuário acessa a tela "Entrar" e preenche os dados solicitados. | O sistema registra os dados e confirma o cadastro. | O usuário está cadastrado e pode realizar login. |
@@ -47,28 +76,7 @@
 | 13.2 | Monitoramento de Inatividade - Retorno      | Aviso de inatividade recebido. | Realizar uma ação dentro do tempo permitido e verificar se o sistema cancela o encerramento da partida, permitindo que o jogo continue normalmente. | O sistema cancela o encerramento e o jogo prossegue sem interrupções. | O jogador continua participando da partida. |
 | 13.3 | Monitoramento de Inatividade - Encerramento | Aviso de inatividade recebido. | Permanecer inativo pelo tempo máximo permitido e verificar se o sistema encerra automaticamente a partida após o tempo limite de inatividade.r | O sistema encerra a partida e declara o adversário como vencedor. | A partida é finalizada e o ranking é atualizado. |
 
-# Requisitos não funcionais 
-| RNFXX | Título | Descrição | Aspecto de Qualidade (ISO 25010) |
-|-------|--------|-----------|----------------------------------|
-| RNF01 | Formato de Dados do Cadastro de Usuário | O sistema deve permitir o cadastro de usuários com os seguintes formatos: username limitado a 10 caracteres, senha com mínimo de 8 e máximo de 20 caracteres, data de nascimento no formato DD/MM/AAAA e uma frase de efeito opcional com limite de 25 caracteres. | Usabilidade |
-| RNF02 | Persistência de Dados no Banco de Dados | O sistema deve utilizar um banco de dados com criptografia AES-256 para armazenar todas as informações dos jogadores. | Segurança |
-| RNF03 | Aleatoriedade no Pareamento de Jogadores | O sistema deve garantir que o pareamento de jogadores ocorra com chances iguais de 50%, sem qualquer viés ou padrão previsível. | Desempenho |
-| RNF04 | Restrições na Inserção da Palavra pelo Detentor | A palavra inserida pelo detentor deve corresponder exatamente a uma palavra válida no dicionário controlado pelo time de desenvolvimento. | Funcionalidade |
-| RNF05 | Bloqueio Imediato de Letras Repetidas | O sistema deve desabilitar letras já escolhidas pelo prisioneiro em até 100 milissegundos, evitando tentativas repetidas. | Usabilidade |
-| RNF06 | Fórmula para Cálculo do Limite de Tentativas | O sistema deve calcular o limite de tentativas do prisioneiro usando a fórmula: número de letras da palavra + 5. Por exemplo, uma palavra com 7 letras permite 12 tentativas. | Funcionalidade |
-| RNF07 | Encerramento Automático da Partida | O sistema deve encerrar automaticamente a partida e desconectar os jogadores em até 500 milissegundos após a vitória de um dos jogadores. | Confiabilidade |
-| RNF08 | Atualização de Pontuação | O sistema deve atualizar a pontuação do jogador vencedor no ranking geral em até 300 milissegundos após o encerramento da partida. | Desempenho |
-| RNF09 | Emissão de Sons | O sistema deve reproduzir sons que indiquem claramente o propósito de cada evento, como acertos, erros e encerramento da partida. Os sons devem seguir convenções intuitivas e ser livres de direitos autorais. Exemplos: som de "erro" para tentativas incorretas, som de "acerto" para letras corretas, som de "vitória" para o jogador vencedor e som de "derrota" para o perdedor. Cada som deve durar exatamente 1 segundo. | Usabilidade |
-| RNF10 | Exibição de Animações | O sistema deve exibir animações que representem eventos do jogo, como escolha de letras, erros do prisioneiro e enforcamento. Cada animação deve durar exatamente 2,5 segundos. | Usabilidade |
-| RNF11 | Tempo de Resposta do Sistema | O sistema deve responder a todas as interações do usuário (como cliques, seleção de letras, atualização do ranking e login) em até 500 milissegundos. | Desempenho |
-| RNF12 | Usabilidade do Site | O site do jogo deve seguir as heurísticas de usabilidade de Nielsen, garantindo que a interface seja intuitiva, eficiente e acessível para os usuários. | Usabilidade |
-| RNF13 | Disponibilização do Jogo | O sistema deve ser disponibilizado exclusivamente como uma aplicação web, acessível por meio de navegadores modernos em dispositivos com conexão à internet. | Compatibilidade |
-| RNF14 | Disponibilidade do Sistema | O sistema deve estar disponível para uso 24 horas por dia, 7 dias por semana, com uma taxa de disponibilidade mínima de 99,9%. | Confiabilidade |
-| RNF15 | Escalabilidade do Sistema | O sistema deve ser capaz de suportar até 1000 usuários simultâneos sem degradação significativa no desempenho ou na experiência do usuário. | Desempenho |
-| RNF16 | Tempo de Monitoramento de Inatividade | O sistema deve monitorar a inatividade dos jogadores e emitir um aviso após 30 segundos de inatividade. Se o jogador não realizar nenhuma interação dentro de 10 segundos após o aviso, o jogo será encerrado automaticamente. O aviso deve incluir uma mensagem visual clara. | Usabilidade                      |
-
-# Casos de testes - Requsitos não funcionais
-
+## Casos de testes - Requsitos não funcionais
 | ##   | Título do Caso de Teste                     | Pré-condição                                      | Procedimento de Teste | Resultado Esperado  | Pós-condição                                  |
 |------|---------------------------------------------|--------------------------------------------------|----------------------|--------------------|----------------------------------------------|
 | 01.1 | Formato de Dados do Cadastro - Sucesso      | O sistema está em execução e a tela de cadastro está disponível. | Tentar cadastrar um usuário com username de até 10 caracteres, senha entre 8 e 20 caracteres, data de nascimento válida e frase de efeito de até 25 caracteres. | O sistema aceita o cadastro e confirma o registro. | O usuário está cadastrado e pode realizar login. |
@@ -91,7 +99,9 @@
 | 15   | Disponibilidade do Sistema                 | O sistema está em execução.                     | Monitorar a disponibilidade do sistema durante um período de 24 horas. | O sistema permanece disponível por 99,9% do tempo, sem interrupções significativas. | O sistema está operacional e confiável. |
 | 16   | Escalabilidade do Sistema                  | O sistema está em execução com 1000 usuários simultâneos. | Simular o acesso de 1000 usuários simultâneos e monitorar o desempenho. | O sistema suporta 1000 usuários simultâneos sem degradação significativa no desempenho. | O sistema mantém a escalabilidade e a experiência do usuário. |
 
-# Tabela de correlação entre requisitos funcionais (RFs) e requisitos não funcionais (RNFs) relacionados
+## Tabela de correlação entre requisitos funcionais (RFs) e requisitos não funcionais (RNFs) relacionados
+A tabela de correlação demonstra a relação entre requisitos funcionais e não funcionais. Embora nem sempre um requisito funcional precise estar diretamente relacionado a um requisito não funcional, é comum que essas conexões ocorram naturalmente. Por exemplo, o requisito funcional RF01 (Cadastro de Usuário) está relacionado ao requisito não funcional RNF01 (Formato de Dados do Cadastro de Usuário), pois ambos tratam das regras de formatação dos dados inseridos pelo usuário. Essa correlação ajuda a garantir que todos os aspectos do sistema estejam alinhados e que nenhum requisito crítico seja negligenciado durante o desenvolvimento.
+
 | Requisitos funcionais                     | Requisitos não funcionais                                                                                   |
 |-------------------------------------------|-------------------------------------------------------------------------------------------------------------|
 | **RF01** (Cadastro de Usuário)            | **RNF01** (Formato de Dados do Cadastro de Usuário), **RNF02** (Persistência de Dados)                              |
@@ -109,3 +119,5 @@
 | **RF13** (Atualização de Pontuação)       | **RNF08** (Atualização de Pontuação)                                                                           |
 | **RF14** (Exibição do Ranking Geral)      | **RNF08** (Atualização de Pontuação)                                                                           |
 | **RF15** (Tratamento de Inatividade)      | **RNF16** (Tempo de Monitoramento de Inatividade)                                                              |
+
+Em conclusão, este projeto foi um exercício de valor para desenvolver habilidades de levantamento de requisitos e controle de versão. A criação dos requisitos funcionais e não funcionais, juntamente com os casos de teste e a tabela de correlação, proporcionou uma compreensão mais profunda sobre como planejar e estruturar um sistema de software. Esperamos que este material atenda aos critérios de qualidade da atividade.
