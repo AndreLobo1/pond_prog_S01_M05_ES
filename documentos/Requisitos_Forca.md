@@ -91,3 +91,21 @@
 | 15   | Disponibilidade do Sistema                 | O sistema está em execução.                     | Monitorar a disponibilidade do sistema durante um período de 24 horas. | O sistema permanece disponível por 99,9% do tempo, sem interrupções significativas. | O sistema está operacional e confiável. |
 | 16   | Escalabilidade do Sistema                  | O sistema está em execução com 1000 usuários simultâneos. | Simular o acesso de 1000 usuários simultâneos e monitorar o desempenho. | O sistema suporta 1000 usuários simultâneos sem degradação significativa no desempenho. | O sistema mantém a escalabilidade e a experiência do usuário. |
 
+# Tabela de correlação entre requisitos funcionais (RFs) e requisitos não funcionais (RNFs) relacionados
+| Requisitos funcionais                     | Requisitos não funcionais                                                                                   |
+|-------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| **RF01** (Cadastro de Usuário)            | **RNF01** (Formato de Dados do Cadastro de Usuário), **RNF02** (Persistência de Dados)                              |
+| **RF02** (Login de Usuário)               | **RNF01** (Formato de Dados do Cadastro de Usuário), **RNF02** (Persistência de Dados)                              |
+| **RF03** (Armazenamento de Informações dos Usuários) | **RNF02** (Persistência de Dados)                                                                              |
+| **RF04** (Pareamento de Jogadores)        | **RNF03** (Aleatoriedade no Pareamento de Jogadores)                                                           |
+| **RF05** (Definição da Palavra pelo Detentor) | **RNF04** (Restrições na Inserção da Palavra pelo Detentor)                                                    |
+| **RF06** (Validação da Palavra Escolhida) | **RNF04** (Restrições na Inserção da Palavra pelo Detentor)                                                    |
+| **RF07** (Escolha de Letras pelo Prisioneiro) | **RNF05** (Bloqueio Imediato de Letras Repetidas), **RNF09** (Emissão de Sons)                                     |
+| **RF08** (Omissão de Letras Já Escolhidas)| **RNF05** (Bloqueio Imediato de Letras Repetidas)                                                              |
+| **RF09** (Emissão de Sons)                | **RNF09** (Emissão de Sons)                                                                                    |
+| **RF10** (Exibição de Animações)          | **RNF10** (Exibição de Animações)                                                                              |
+| **RF11** (Cálculo do Limite de Tentativas)| **RNF06** (Fórmula para Cálculo do Limite de Tentativas)                                                       |
+| **RF12** (Encerramento Automático da Partida) | **RNF07** (Encerramento Automático da Partida)                                                                 |
+| **RF13** (Atualização de Pontuação)       | **RNF08** (Atualização de Pontuação)                                                                           |
+| **RF14** (Exibição do Ranking Geral)      | **RNF08** (Atualização de Pontuação)                                                                           |
+| **RF15** (Tratamento de Inatividade)      | **RNF16** (Tempo de Monitoramento de Inatividade)                                                              |
