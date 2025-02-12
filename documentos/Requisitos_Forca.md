@@ -1,7 +1,18 @@
 Este repositório apresenta um conjunto de requisitos funcionais e não funcionais para o desenvolvimento de um jogo de forca online, onde dois jogadores interagem: um escolhe uma palavra (detentor) e o outro tenta adivinhá-la (prisioneiro). Para definir os requisitos, realizamos uma pesquisa exploratória em diversos sites de jogos de forca online existentes. Inspirados por essas referências, projetamos um jogo fictício que incorpora as melhores práticas observadas.
 
 ## Requisitos Funcionais
-Os requisitos funcionais descrevem as funcionalidades específicas do sistema. Eles incluem ações como cadastro de usuários, login, pareamento de jogadores, validação de palavras e lógica do jogo. Cada requisito funcional está diretamente ligado a uma tarefa ou comportamento esperado do sistema.
+Os requisitos funcionais definem as funcionalidades específicas que o sistema deve oferecer para atender às necessidades dos usuários. Eles abrangem ações como cadastro de usuários, login, pareamento de jogadores, validação de palavras e a lógica do jogo. Cada requisito funcional está diretamente vinculado a uma tarefa ou comportamento esperado do sistema.
+
+Para a definição desses requisitos, utilizamos o modelo 5W1H, uma metodologia empregada na análise de problemas e planejamento de soluções. O modelo é composto por seis perguntas fundamentais: O que? Quem? Onde? Quando? Como? e Por quê? (do inglês, What? Who? Where? When? How? and Why?). Essa abordagem auxilia na estruturação dos requisitos ao explorar diferentes perspectivas do sistema:  
+
+- O que? Define a funcionalidade ou característica específica que deve ser implementada.  
+- Quem? Identifica os usuários ou partes interessadas envolvidas no requisito.  
+- Onde? Determina o contexto ou ambiente no qual o requisito será aplicado.  
+- Quando? Estabelece o momento ou a condição em que o requisito deve ser acionado.  
+- Como? Explica o funcionamento e a implementação do requisito dentro do sistema.  
+- Por quê? Justifica a necessidade do requisito, destacando seu impacto e benefícios.  
+
+Vale ressaltar que optamos por não responder necessariamente a todas essas perguntas para cada requisito funcional, pois cada um possui um contexto e propósito específicos, e, em alguns casos, não é necessário abranger todas elas. No entanto, mesmo nessas situações, buscamos preservar a clareza e o entendimento do requisito, garantindo que as informações essenciais sejam documentadas da melhor forma possível.
 
 | RFXX  | Título                                     | Regra de Negócio |
 |-------|--------------------------------------------|------------------|
